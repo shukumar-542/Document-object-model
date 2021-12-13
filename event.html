@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Event Mangement </title>
+</head>
+<body>
+      <h1 onmouseover="heading()">Exploring Events</h1>
+      <button onclick="handleClick()">Click me</button>
+      <button id = "changeBg">Click Me 1</button>
+      <button id= "colorChange">Click Me 2</button>
+      <button id = 'lastbtn'>Click Me 3</button>
+
+      <script>
+            function handleClick(){
+                  alert('some one press me.');
+            }
+            function heading(){
+                  console.log('This is heading');
+            }
+            const second = document.getElementById('changeBg');
+            second.onclick = clickMe1;
+            function clickMe1(){
+                  document.body.style.backgroundColor ='cyan';
+            }
+
+            function anotherColorbd(){
+                  document.body.style.backgroundColor = 'blue';
+            }
+
+            const color  = document.getElementById('colorChange');
+            color.addEventListener('click', anotherColorbd)
+
+          document.getElementById('lastbtn').addEventListener('click',function(){document.body.style.color  = 'red';})
+           
+      </script>
+</body>
+</html>
